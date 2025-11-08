@@ -1,0 +1,61 @@
+# =============================================================================
+# WA-YOLO Environment Configuration
+# Water-Aware Small Object Detection Framework - Dependency Specification
+# =============================================================================
+
+# Core Deep Learning Frameworks
+torch>=2.0.0                    # PyTorch Deep Learning Framework - CUDA 12.4 Support
+torchvision>=0.15.0             # Computer Vision Data Loading and Transforms
+
+# YOLO Model Training and Inference
+ultralytics>=8.0.200           # YOLOv8 Core Library - 960px High-Resolution Training
+thop>=0.1.0                     # Model Complexity Analysis - FLOPs and Parameters
+
+# Image Processing and Data Augmentation
+opencv-python>=4.7.0           # OpenCV - Image Tiling and Preprocessing
+Pillow>=9.5.0                   # PIL Image Processing - High-Resolution Support
+albumentations>=1.3.0           # Advanced Data Augmentation - Reflection and Low-Light Simulation
+
+# Scientific Computing and Data Processing
+numpy>=1.24.0                   # Numerical Computing - Float32 Precision Support
+scipy>=1.10.0                   # Scientific Computing - NMS and Statistical Calculations
+pandas>=2.0.0                   # Data Analysis - Metric Statistics and Result Logging
+
+# Visualization and Result Analysis
+matplotlib>=3.7.0               # Plotting Library - Training Curves and Detection Visualization
+seaborn>=0.12.0                 # Statistical Visualization - Correlation Analysis and Heatmaps
+
+# Embedded Deployment Support
+tensorrt>=8.5.0                 # TensorRT Inference Acceleration - Jetson Xavier NX
+pycuda>=2022.0                  # CUDA Python Interface - Embedded Performance Optimization
+
+# Development Tools and Quality Assurance
+tqdm>=4.65.0                    # Progress Bars - Training and Evaluation Progress
+pyyaml>=6.0                     # Configuration File Parsing - maritime.yaml Reading
+requests>=2.31.0                # HTTP Requests - Model Downloads and Data Acquisition
+
+# Model Verification and Reproducibility
+checksumdir>=1.2.0              # Directory Checksums - Model File Integrity Verification
+gitpython>=3.1.0                # Git Integration - Experiment Version Tracking
+
+# Performance Monitoring and Optimization
+psutil>=5.9.0                   # System Monitoring - GPU Memory and Power Tracking
+pynvml>=11.0.0                  # NVIDIA Management Library - GPU Status Monitoring
+
+# Multi-Platform Compatibility
+platformdirs>=3.0.0             # Platform-Specific Directories - Cross-Platform Path Handling
+pathlib2>=2.3.0                 # Path Operations - Legacy Python Version Compatibility
+
+# =============================================================================
+# Installation Instructions
+# 
+# Workstation Environment (RTX 3080):
+pip install -r requirements.txt
+# 
+# Embedded Environment (Jetson Xavier NX):
+pip install torch-2.0.0 torchvision-0.15.0 --extra-index-url https://download.pytorch.org/whl/cu118
+pip install -r requirements.txt --no-deps
+# 
+# Verification Command:
+python -c "import torch; print(f'PyTorch: {torch.__version__}, CUDA: {torch.cuda.is_available()}')"
+# =============================================================================
